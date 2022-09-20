@@ -1,0 +1,55 @@
+.nav-item{
+    margin-top: 30rpx;
+    margin-left: 65rpx;
+    margin-right: 65rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-text{
+    font-size:16px; 
+    width: 200rpx;
+}
+.item-inp{
+    width: 420rpx;
+    border: 1px solid black;
+    border-radius: 10rpx;
+}
+
+.item-pay-inp{
+    width: 200rpx;
+    border: 1px solid black;
+    border-radius: 10rpx;
+}
+.pay-picker{
+    border: 1px solid black;
+    border-radius: 10rpx;
+    margin-left: 10rpx;
+    width: 200rpx;
+}
+
+.picker-img{
+    width: 40rpx;
+    height: 36rpx;
+}
+
+.item-textarea{
+    width: 420rpx;
+    height: 200rpx;
+    border: 1px solid black;
+    border-radius: 10rpx;
+}
+
+.item-button{
+    /* margin-top: 40rpx; */
+    margin: 0rpx 30rpx;
+    width: 350rpx;
+    height: 100rpx;
+}
+
+.submit{
+    width: 500rpx;
+    height: 100rpx;
+    background-color: skyblue;
+}
+

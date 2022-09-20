@@ -1,0 +1,37 @@
+<navigator wx:if="{{list.length > 0 && flag == 0  || flag == 2}}" wx:for="{{list}}" wx:key="id" wx:for-item="item" url='../account/account?sceneId={{item.sceneId}}'>
+    <view class='bill' bindlongpress='del' data-id="{{item.sceneId}}" data-index="{{index}}">
+        <!-- <view class="center"> -->
+            <!-- <image class="bill-img" src="http://cynosure.online/test/{{item.expenseCategory}}.png" lazy-load></image> -->
+        <!-- </view> -->
+        <view class='bill-info'>
+            <text class='bill-title ell'>{{item.sceneTitle}}</text>
+            <text class='bill-money'>总金额:{{item.sceneTotal}}元</text>
+            <text class='bill-explain ell'>备注:{{item.sceneExplain}}</text>
+            <text class="bill-date">{{item.sceneTime}}</text>
+        </view>
+    </view>
+</navigator>
+<navigator wx:if="{{list.length > 0 && flag == 1}}" wx:for="{{list}}" wx:key="id" wx:for-item="item" url="../pay/pay?expenseId={{item.expenseId}}">
+    <view class='bill' bindlongpress='del' data-id="{{item.expenseId}}" data-index="{{index}}">
+        <view class="center">
+            <image class="bill-img" src="{{resourceUrl}}/category/{{item.expenseCategory}}.png" lazy-load></image>
+        </view>
+        <view class='bill-info'>
+            <text class='bill-title ell'>{{item.expenseTitle}}</text>
+            <text class='bill-money'>金额:{{item.expenseMoney}}元</text>
+            <text class='bill-explain ell'>备注:{{item.expenseExplain}}</text>
+            <text class="bill-date">{{item.expenseTime}}</text>
+        </view>
+    </view>
+</navigator>
+<view wx:if="{{list.length > 0 && flag != 2}}" class="nothing center">------只有这么多哦!------</view>
+<view class="kong" wx:if="{{list.length <= 0 && flag != 2}}">
+    <text>没有符合条件的查询结果哦</text>
+    <image src="{{resourceUrl}}/other/kong.png" lazy-load></image>
+</view>
+<loading wx:if='{{ loading && flag == 2}}'>加载中...</loading>
+<view wx:elif='{{!hasMore && flag == 2 && list.length > 0}}' class="nothing center">------已经到底了!------</view>
+<view class="kong" wx:if="{{list.length <= 0 && !hasMore && flag == 2}}">
+    <text>您还没有任何账单记录</text>
+    <image src="{{resourceUrl}}/other/kong.png" lazy-load></image>
+</view>

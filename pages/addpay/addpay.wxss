@@ -1,0 +1,45 @@
+.headfont{
+    font-size: 20px;
+    margin: 20rpx 30rpx;
+}
+.nav-item{
+    margin-top: 30rpx;
+    margin-left: 65rpx;
+    margin-right: 65rpx;
+    /* border: 1px solid green */
+    display: flex;
+    flex-direction: row;
+}
+.item-text{
+    font-size:16px; 
+    width: 100rpx;
+}
+.item-inp{
+    width: 420rpx;
+    border: 1px solid black;
+    border-radius: 10rpx;
+}
+
+.item-picker{
+    border: 1px solid black;
+    border-radius: 10rpx;
+    width: 420rpx;
+}
+.picker-img{
+    width: 40rpx;
+    height: 36rpx;
+}
+
+.item-textarea{
+    width: 420rpx;
+    height: 200rpx;
+    border: 1px solid black;
+    border-radius: 10rpx;
+}
+
+.submit{
+    margin-top: 50rpx;
+    width: 700rpx;
+    height: 100rpx;
+    background-color: skyblue;
+}

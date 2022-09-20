@@ -1,0 +1,41 @@
+<!-- 引入外部的wxs文件 -->
+<wxs src="../../tool.wxs" module="tool" />
+<!-- 搜索 -->
+<view class="search" wx:if="{{list.length > 0}}">
+    <input class="search-inp" name="time" type="text" confirm-type="search" bindconfirm="bindconfirm" bindblur="bindblur" placeholder="输入要查询的账单时间" value="{{value}}"></input>
+    <image class="search-img" src="{{resourceUrl}}/other/search.png" bindtap="searchTap"></image>
+</view>
+<!-- 账单列表 -->
+<block wx:if="{{index == 0}}">
+    <navigator wx:if="{{list.length > 0}}" wx:for="{{list}}" wx:key="monthlyId" wx:for-item="item" url="../bill/bill?index=0&id={{item.monthlyId}}">
+        <view class='bill'>
+            <view class="center">
+                <!-- 根据wxs接口提供的自定义slice方法截取字符串的后两位，日期的后两位是月份 -->
+                <image class="bill-img" src="{{resourceUrl}}/month/{{tool.slice(item.monthlyTime)}}.png" lazy-load></image>
+            </view>
+            <view class='bill-info'>
+                <text class='bill-title ell'>{{item.monthlyTime}}月的账单</text>
+                <text class='bill-money'>金额:{{item.monthlyTotal}}元</text>
+            </view>
+        </view>
+    </navigator>
+</block>
+<block wx:elif="{{index == 1}}">
+    <navigator wx:if="{{list.length > 0}}" wx:for="{{list}}" wx:key="expenseId" wx:for-item="item" url="../bill/bill?index=1&id={{item.yearlyId}}">
+        <view class='bill'>
+            <!-- <view class="center">
+                <image class="bill-img" src="http://cynosure.online/test/其他.png" lazy-load></image>
+            </view> -->
+            <view class='bill-info'>
+                <text class='bill-title ell'>{{item.yearlyTime}}年的账单</text>
+                <text class='bill-money'>金额:{{item.yearlyTotal}}元</text>
+            </view>
+        </view>
+    </navigator>
+</block>
+<view class="nothing center" wx:if="{{list.length > 0}}">------已经到底了!------</view>
+<!-- 空记录 -->
+<view class="kong" wx:if="{{list.length <= 0}}">
+    <text>您的账单还没有出炉哦</text>
+    <image src="{{resourceUrl}}/other/kong.png" lazy-load></image>
+</view>

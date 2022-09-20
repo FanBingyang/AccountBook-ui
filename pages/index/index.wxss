@@ -1,0 +1,161 @@
+/* 遮罩层 */
+.mask_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+}
+/* 弹窗层 */
+.modal_box {
+    width: 80%;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 1001;
+    background: #fafafa;
+    margin: -150px 10% 0 10%;
+    border-radius: 5px;
+}
+/* 标题 */
+.title {
+    padding: 15px;
+    text-align: left;
+    font-size: 20px;
+}
+/* 小程序内容 */
+.content-app {
+   margin: 0 30rpx;
+}
+/* 小程序图标 */
+.app-img {
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+/* 分割线 */
+.line{
+    width: 90%;
+    height: 1px;
+    background-color: #d1cdcd;
+    margin-top: 20rpx;
+    margin-left: 5%;
+}
+/* 说明文字 */
+.content-msg{
+    margin: 30rpx 20px;
+}
+/* 原点 */
+.circle {
+    float: left;
+    width: 25rpx;
+    height: 25rpx;
+    background-color: #9c9b9b;
+    border-radius: 50%;   
+    margin-top: 20rpx;
+    margin-right: 25rpx;
+    margin-left: 5rpx; 
+}
+/* 文字 */
+.content-msg text {
+    display: block;
+    color: #9d9d9d;
+    font-size: 15px;
+}
+/* 去除按钮边框 */
+.modal_but button::after{
+    border: none
+}
+/* 按钮区 */
+.modal_but {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20rpx; 
+}
+/* 拒绝按钮 */
+.cancel {
+    color: black;
+    font-size: 16px;
+    margin-right: -230rpx;
+}
+/* 允许按钮 */
+.sure {
+    color: #44b549;
+    font-size: 16px;
+    margin-right: 40rpx;
+}
+
+/* 轮播图模块 */
+
+.slider, .slider image, .slider swiper {
+    width: 100%;
+    /* 微信小程序约束的单位是rpx，1px=2rpx */
+    height: 390rpx;
+}
+
+/* 导航分区模块 */
+
+.index-nav {
+    display: flex;
+    /* 子元素换行排列 */
+    flex-wrap: wrap;
+}
+
+/* 导航分区排列的元素 */
+
+.index-nav .nav-item {
+    width: 33.33333333333%;
+    height: 200rpx;
+    border-bottom: 1rpx solid #ccc;
+    /*
+        box-sizing:呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。
+        属性border-box：为元素设定的宽度和高度决定了元素的边框盒。
+     */
+    box-sizing: border-box;
+    display: flex;
+    /* 设置垂直排列 */
+    flex-direction: column;
+    /* 垂直(主轴)居中 */
+    justify-content: center;
+    /* 水平(交叉轴)居中 */
+    align-items: center;
+}
+
+/* 导航区文字 */
+
+.index-nav text {
+    font-size: 14px;
+    margin-top: 10rpx;
+    margin-bottom: -5rpx;
+}
+
+/* 导航区图片 */
+
+.index-nav image {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+/* 今日消费总数的通知 */
+
+.advise {
+    width: 710rpx;
+    height: 170rpx;
+    margin: 20rpx;
+    border: 5rpx solid gray;
+    border-radius: 40rpx;
+    font-size: 16px;
+}
+
+.money {
+    font-size: 20px;
+    color: red;
+    font-family: YouYuan;
+}

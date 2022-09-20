@@ -1,0 +1,17 @@
+.search {
+    border: 2px solid gray;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: row;
+}
+.search-inp {
+    width: 700rpx;
+    height: 50rpx;
+    margin-left: 20rpx;
+}
+
+.search-img {
+    width: 50rpx;
+    height: 50rpx;
+    padding:  0rpx 30rpx;
+}

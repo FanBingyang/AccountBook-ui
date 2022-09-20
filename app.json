@@ -1,0 +1,46 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/addpay/addpay",
+        "pages/paylist/paylist",
+        "pages/pay/pay",
+        "pages/creat/creat",
+        "pages/account/account",
+        "pages/search/search",
+        "pages/searchlist/searchlist",
+        "pages/billlist/billlist",
+        "pages/bill/bill"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#1296DB",
+        "navigationBarTitleText": "小账本",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "position": "bottom",
+        "color": "#000000",
+        "selectedColor": "#1296db",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "pages/images/shouye.png",
+                "selectedIconPath": "pages/images/shouye2.png"
+            },
+            {
+                "pagePath": "pages/addpay/addpay",
+                "text": "记一笔",
+                "iconPath": "pages/images/add.png",
+                "selectedIconPath": "pages/images/add2.png"
+            },
+            {
+                "pagePath": "pages/paylist/paylist",
+                "text": "消费",
+                "iconPath": "pages/images/xiaofei.png",
+                "selectedIconPath": "pages/images/xiaofei2.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

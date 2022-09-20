@@ -1,0 +1,49 @@
+page{
+    background-color: #fff;
+}
+.headfont{
+    margin-top: 30rpx;
+    margin-bottom:30rpx; 
+    font-size: 20px;
+}
+
+.nav-item{
+    margin: 10rpx 0;
+}
+.item-text{
+    padding-right: 40rpx;
+}
+
+.item-inp{
+    border: 1rpx solid rgb(161, 161, 161);
+    border-radius: 10rpx;
+    width: 400rpx;
+    text-align: center;
+}
+.item-button
+{
+    margin-top: 30rpx;
+    margin-bottom: 20rpx;
+    width: 260rpx;
+    height:100rpx;
+}
+.item-add-inp{
+    border: 1px solid red;
+    width: 200rpx;
+}
+.item-add{
+    margin-top: 30rpx;
+    margin-bottom: 20rpx;
+    width: 600rpx;
+    height: 100rpx;
+    background-color: skyblue;
+}
+.mingxi{
+    /* padding-top: 10rpx; */
+    height: 100rpx;
+    font-size: 17px;
+}
+.canvas{
+    /* 将图缩放为0.9倍 */
+    transform: scale(0.9); 
+}

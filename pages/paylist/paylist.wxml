@@ -1,0 +1,23 @@
+<block wx:if="{{list.length > 0}}" wx:for="{{list}}" wx:key="id" wx:for-item="item">
+        <view  bindlongpress='del' data-id="{{item.expenseId}}" data-index="{{index}}">
+            <navigator url="../pay/pay?expenseId={{item.expenseId}}">
+                <view class='bill'>
+                    <view class="center">
+                        <image class="bill-img" src="{{resourceUrl}}/category/{{item.expenseCategory}}.png" lazy-load></image>
+                    </view>
+                    <view class='bill-info'>
+                        <text class='bill-title ell'>{{item.expenseTitle}}</text>
+                        <text class='bill-money'>金额:{{item.expenseMoney}}元</text>
+                        <text class='bill-explain ell'>备注:{{item.expenseExplain}}</text>
+                        <text class="bill-date">{{item.expenseTime}}</text>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+</block>
+<loading wx:if='{{ loading }}'>加载中...</loading>
+<view wx:elif='{{!hasMore &&  list.length > 0}}' class="nothing center">------已经到底了!------</view>
+<view class="kong" wx:if="{{list.length <= 0}}">
+    <text>您还没有任何消费记录</text>
+    <image src="{{resourceUrl}}/other/kong.png" lazy-load></image>
+</view>

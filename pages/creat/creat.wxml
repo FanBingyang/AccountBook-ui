@@ -1,0 +1,36 @@
+<view class="nav">
+    <form bindsubmit="submit">
+        <!-- 用户自定义账单标题 -->
+        <view class="nav-item">
+            <text class="item-text">账单名称:</text>
+            <input class="item-inp" type="text" name="title" placeholder="账单名称"></input>
+        </view>
+        <!-- 通过循环在页面添加消费类型的选择 -->
+        <block wx:for="{{lists}}" wx:key="index">
+            <!-- 消费金额 -->
+            <view class="nav-item">
+                <text class="item-text">消费金额:</text>
+                <input class="item-pay-inp" name="money{{index}}" type="digit" data-index="{{index}}" placeholder="0" bindinput='bindKeyInput' bindblur="bindblur" ></input>
+                <picker class="pay-picker center" name="{{moneyList[lists[index].categoryIndex]}}" data-index="{{index}}" bindchange="bindPickerChange" value="{{lists[index].categoryIndex}}" range="{{categoryList}}">
+                    <!-- <view class="picker"> -->
+                    {{categoryList[lists[index].categoryIndex]}}
+                    <image class="picker-img" src="{{resourceUrl}}/other/select.png"></image>
+                    <!-- </view> -->
+                </picker>
+            </view>
+        </block>
+        <!-- 用户自定义账单消费说明 -->
+        <view class="nav-item">
+            <text class="item-text">备注:</text>
+            <textarea class="item-textarea" name="explain" maxlength="300"  cursor-spacing="48" show-confirm-bar="{{false}}"></textarea>
+        </view>
+       
+        <view class="nav-item center">
+            <button class='item-button' type="primary" bindtap='addList'>添加选项</button>
+            <button class='item-button' type="warn	" bindtap='delList'>删除选项</button>
+        </view>
+        <view class="nav-item center">
+            <button class="submit" formType="submit">添加</button>
+        </view>
+    </form>
+</view>

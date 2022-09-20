@@ -1,0 +1,3 @@
+/* 导入account.wxss样式，因为他和account的页面属性都一样，所以可以直接引用过来 */
+@import "../account/account.wxss";
+

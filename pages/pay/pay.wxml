@@ -1,0 +1,26 @@
+<view class="headfont center">
+    <text>消费详情</text>
+</view>
+<view class="nav">
+    <view class="nav-item center">
+        <text class="item-text">消费名称:</text>
+        <input class="item-inp" type="text" value="{{expense.expenseTitle}}" disabled></input>
+    </view>
+    <view class="nav-item center">
+        <text class="item-text">消费金额:</text>
+        <input class="item-inp" type="text" value="{{expense.expenseMoney}}元" disabled></input>
+    </view>
+    <view class="nav-item center">
+        <text class="item-text">消费类型:</text>
+        <input class="item-inp" type="text" value="{{expense.expenseCategory}}" disabled></input>
+    </view>
+    <view class="nav-item center">
+        <text class="item-text center">备 注:</text>
+        <textarea class="item-inp" style="text-align: left;" value="{{expense.expenseExplain}}" auto-height='true' disabled></textarea>
+    </view>
+    <view class="nav-item center">
+        <text class="item-text">消费时间:</text>
+        <input class="item-inp" type="text" value="{{expense.expenseTime}}" disabled></input>
+    </view>
+    <text class="addpay center" bindtap="addpay">新添加一笔消费>></text>
+</view>

@@ -1,0 +1,72 @@
+<view class="modal" wx:if='{{showModal}}'>
+    <!-- 其他区域加上一层蒙版 -->
+    <view class='mask_layer' />
+    <view class='modal_box'>
+        <view class="title">微信授权</view>
+        <view class='content'>
+            <view class="content-app center">
+                <image class="app-img" src="../images/icon.png"></image>
+                <text class='app-name'>随身小账本申请获取以下权限:</text>
+            </view>
+            <view class="line center"></view>
+            <view class="content-msg center">
+                <view class="circle"></view>
+                <text>获得你的公开信息(昵称、头像等)</text>
+            </view>
+        </view>
+        <view class='modal_but'>
+            <button bindtap='modal_Hidden' class='but cancel'>拒绝</button>
+            <button bindtap='GetUserInfo' class='but sure' open-type="getUserInfo">允许</button>
+        </view>
+    </view>
+</view>
+
+
+<!--轮播图区 -->
+<view class='slider'>
+    <!-- 当属性设置为true或者false时，要用{{ }}括起来，不然会被当成字符串，为true时可以用引号，也可以只写属性名，是否显示指示点indicator-dots='{{ true }}' -->
+    <swiper autoplay='{{ true }}' interval='2000' duration='500' circular>
+        <swiper-item wx:for="{{swiperList}}" wx:key="id">
+            <image src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+
+<!-- 间隔空白区 -->
+<view class="divider"></view>
+<!-- 功能导航区 -->
+<view class="index-nav">
+    <navigator class="nav-item bdr" url="/pages/creat/creat">
+        <image src="{{resourceUrl}}/icon/creat.png"></image>
+        <text>新建账单</text>
+    </navigator>
+    <navigator class="nav-item bdr" url="/pages/searchlist/searchlist?index=2">
+        <image src="{{resourceUrl}}/icon/list.png"></image>
+        <text>账单列表</text>
+    </navigator>
+    <navigator class="nav-item bdr" url="/pages/search/search?index=0">
+        <image src="{{resourceUrl}}/icon/searchlist.png"></image>
+        <text>查询账单</text>
+    </navigator>
+    <navigator class="nav-item bdr" url="/pages/search/search?index=1">
+        <image src="{{resourceUrl}}/icon/searchpay.png"></image>
+        <text>查询消费</text>
+    </navigator>
+    <navigator class="nav-item bdr" url="/pages/billlist/billlist?index=0">
+        <image src="{{resourceUrl}}/icon/monthly.png"></image>
+        <text>月账单</text>
+    </navigator>
+    <navigator class="nav-item bdr" url="/pages/billlist/billlist?index=1">
+        <image src="{{resourceUrl}}/icon/yearly.png"></image>
+        <text>年账单</text>
+    </navigator>
+</view>
+<view class="advise" class="divider"></view>
+<view class="advise center" wx:if="{{money < 0}}">您今天的消费是......</view>
+<view class="advise center" wx:elif="{{money > 0}}">
+    您今天已消费
+    <text class="money">{{money}}</text>元
+</view>
+<view class="advise center" wx:else>
+    <text>您今天还没有消费记录哦！</text>
+</view>

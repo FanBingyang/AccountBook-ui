@@ -1,0 +1,29 @@
+<view class="nav">
+    <text class="headfont center">账单详情</text>
+    <form bindsubmit="submit" bindreset="reset">
+        <view class="nav-item center">
+            <text class="item-text">账单:</text>
+            <input class="item-inp" name="sceneTitle" type="text" value="{{bill[other[index].time]}}" disabled></input>
+        </view>
+        <block wx:for="{{other[index].categoryList}}" wx:for-item="item" wx:key="index">
+            <view class="nav-item center">
+                <text class="item-text">{{moneyList[index]}}:</text>
+                <input class="item-inp center" style="width:{{width}}rpx;" type="text" value="{{bill[item]}}元" disabled></input>
+            </view>
+        </block>
+        <view class="nav-item center">
+            <text class="item-text ">总额:</text>
+            <input class="item-inp" type="text" style="color:red;" value="{{bill[other[index].total]}}元" disabled></input>
+        </view>
+    </form>
+</view>
+<view class="divider"></view>
+<view class="mingxi center">账单图表明细</view>
+<view wx:if="{{reachBottom}}">
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px;width:320px;margin-top: -100rpx;"></canvas>
+</view>
+<view class="divider"></view>
+<view wx:if="{{reachBottom}}">
+    <canvas canvas-id="columnCanvas" style="height:300px;width:320px"></canvas>
+</view>
+<view class="divider"></view>

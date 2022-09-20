@@ -1,0 +1,31 @@
+<view class="headfont center">
+    查询{{list[index].title}}
+</view>
+<view class="nav">
+    <form bindsubmit="submit">
+        <input name="openId" hidden value="{{openId}}"></input>
+        <view class="nav-item">
+            <text class="item-text">{{list[index].title}}名称:</text>
+            <input class="item-inp" type="text" name="title"></input>
+        </view>
+        <!-- 如果查询类型是消费查询，就显示消费类型 -->
+        <view class="nav-item" wx:if="{{index == 1}}">
+            <text class="item-text">{{list[index].title}}类型:</text>
+            <picker class="item-inp center {{disabledCategoryClass}}" name="category" value="{{categoryList[index_2]}}" bindchange="bindPickerChange" range="{{categoryList}}" disabled="{{categorySwitch}}">
+                {{categoryList[index_2]}}
+                <image class="picker-img" src="{{resourceUrl}}/other/select.png"></image>
+            </picker>
+            <switch class="item-switch" checked="{{!categorySwitch}}" bindchange="categorySwitchChange" />
+        </view>
+        <view class="nav-item">
+            <text class="item-text">{{list[index].title}}时间:</text>
+            <picker class="item-inp center {{disabledTimeClass}}" style="background-color:{{color}}" mode="date" start="1999-06-08" end="{{endtime}}" name="time" value="{{date}}" bindchange="bindDateChage" disabled="{{timeSwitch}}">
+                {{date}}
+            </picker>
+            <switch class="item-switch" checked="{{!timeSwitch}}" bindchange="timeSwitchChange" />
+        </view>
+        <view class="nav-item">
+            <button class="submit" formType="submit">查询</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,139 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+
+/* 功能封装1：设置水平垂直居中 */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 功能封装2:专门用于做间隔的类 */
+.divider{
+    height: 20rpx;
+    background-color:#f1f1f1; 
+    box-shadow: 0 5rpx 5rpx rgb(0,0,0,0.1) inset;
+}
+
+/* 功能封装3：细线边框 
+    移动端边框问题：右边普通边框写法占位置，也不容易对齐
+    解决办法：伪元素+定位 实现
+*/
+/* 给.index-nav .nav-item元素后面添加一个元素（也就是代替了右边框） */
+.bdr{
+    /* 相对定位 */
+    position: relative;
+}
+.bdr::after{
+    content: "";
+    /* 通过伪类元素绘制一像素的右边框 */
+    width:1rpx;
+    height: 100%;
+    background-color:#ccc ;
+    /* 使用绝对定位，不占位置 */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* 每隔三个元素就去除右边框 */
+.bdr:nth-child(3n)::after{
+    width: 0;
+}
+
+
+/* 功能封装4：单行超出宽度变省略号 */
+.ell{
+    /* 先将超出的部分隐藏 */
+    overflow: hidden;
+    /* 设置不换行 */
+    white-space: nowrap;
+    /* 附加省略号 */
+    text-overflow: ellipsis;
+}
+
+
+/* 功能封装5：封装右箭头 >  */
+.arrow {
+    display: flex;
+    /* 项目位于各行之间留有空白的容器内。 */
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow::after {
+    content: "";
+    width: 20rpx;
+    height: 20rpx;
+    border-top: 3rpx solid #ccc;
+    border-right: 3rpx solid #ccc;
+    /* 2D旋转 */
+    transform: rotate(45deg);
+    /* 标记为块级元素，前后带有换行 */
+    display: block;
+}
+
+/* 功能封装6：封装账单列表 */
+.bill{
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ddd;
+    display: flex;
+    position: relative;
+}
+.bill-img{
+    width: 90rpx;
+    height: 90rpx;
+    margin-right: 20rpx;
+}
+.bill-info{
+    width: 520rpx;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #666;
+    /* 设置行高 */
+    line-height: 1.5;
+}
+.bill-title{
+    font-size: 14px;
+    color: #333;
+    /* 设置店铺名称宽度*/
+    width: 320rpx;
+}
+.bill-money{
+    font-size: 12px;
+    color: #f15e5e; 
+}
+.bill-date{
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    color: #3d3333;
+}
+/* 功能封装7：账单列表空页面 */
+.kong{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 50rpx;
+    font-family: SimHei;
+}
+.kong image{
+    width: 500rpx;
+    height: 500rpx;
+    margin-top: 50rpx;
+}
+
+.nothing{
+    color: #888;
+    font-size:16px;
+    line-height: 100rpx;
+}

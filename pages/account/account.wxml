@@ -1,0 +1,47 @@
+<view class="nav">
+    <text class="headfont center">账单详情</text>
+    <form bindsubmit="submit" bindreset="reset">
+        <view class="nav-item center">
+            <text class="item-text">账单:</text>
+            <input class="item-inp" name="sceneTitle" type="text" value="{{scene.sceneTitle}}" disabled="{{!edit}}" focus="{{edit}}"></input>
+        </view>
+        <block wx:for="{{categoryList}}" wx:for-item="item" wx:key="index">
+            <view class="nav-item center">
+                <text class="item-text">{{moneyList[index]}}:</text>
+                <input class="item-inp center" style="width:{{width}}rpx;" type="text" value="{{scene[item]}}元" disabled></input>
+                <view class="center" wx:if="{{edit}}">
+                    +<input class="item-inp" style="width:{{width - 130}}rpx;" type="digit" name="{{item}}"></input>
+                </view>
+            </view>
+        </block>
+        <view class="nav-item center">
+            <text class="item-text ">总额:</text>
+            <input class="item-inp" type="text" style="color:red;" value="{{scene.sceneTotal}}元" disabled></input>
+        </view>
+        <view class="nav-item center">
+            <text class="item-text">备注:</text>
+            <textarea class="item-inp" style="text-align:none;" name="sceneExplain" value="{{scene.sceneExplain}}" disabled="{{!edit}}" auto-height="true"></textarea>
+        </view>
+        <view class="nav-item center">
+            <text class="item-text ">时间:</text>
+            <input class="item-inp" type="text" value="{{scene.sceneTime}}" disabled></input>
+        </view>
+        <view class="nav-item center" wx:if="{{edit}}">
+            <button class="item-button" type="primary" form-type="submit">确认</button>
+            <button class="item-button" type="warn"  bindtap="cancle">取消</button>
+        </view>
+    </form>
+    <view class="nav-item center" wx:if="{{!edit}}">
+        <button class="item-add" bindtap="add">添加/编辑</button>
+    </view>
+</view>
+<view class="divider"></view>
+<view class="mingxi center">账单图表明细</view>
+<view class="center" style="height:300px">
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px;width:320px;margin-top: -120rpx;"></canvas>
+</view>
+<view class="divider"></view>
+<view class="center" >
+    <canvas canvas-id="columnCanvas" style="height:300px;width:320px;"></canvas>
+</view>
+<view class="divider"></view>

@@ -1,0 +1,46 @@
+<view class="headfont center">
+    记录一笔消费
+</view>
+<view class="nav">
+    <form bindsubmit="submit">
+        <view class="nav-item">
+            <text class="item-text">标题:</text>
+            <input class="item-inp" type="text" name="title" placeholder="消费标题" value="{{expense.expenseTitle}}"></input>
+        </view>
+        <view class="nav-item">
+            <text class="item-text">金额:</text>
+            <input class="item-inp" type="digit" name="money" placeholder="消费金额"  value="{{expense.expenseMoney}}"></input>
+        </view>
+
+        <view class="nav-item">
+            <text class="item-text">类型:</text>
+            <picker class="item-picker center" name="category" bindchange="bindPickerChange" value="{{categoryList[index]}}" range="{{categoryList}}">
+                <view class="picker">
+                    {{categoryList[index]}}
+                    <image class="picker-img" src="{{resourceUrl}}/other/select.png"></image>
+                </view>
+            </picker>
+        </view>
+        <view class="nav-item">
+            <text class="item-text">时间:</text>
+            <picker class="item-picker center" name="time" mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="picker">
+                    {{time}}
+                </view>
+            </picker>
+        </view>
+        <view class="nav-item">
+            <text class="item-text">日期:</text>
+            <picker class="item-picker center" name="date" mode="date" value="{{date}}" start="1999-06-08" end="{{endtime}}" bindchange="bindDateChange">
+                <view class="picker">
+                    {{date}}
+                </view>
+            </picker>
+        </view>
+        <view class="nav-item">
+            <text class="item-text">备注:</text>
+            <textarea class="item-textarea" name="explain" maxlength="300" cursor-spacing="48" show-confirm-bar="{{false}}"  value="{{expense.expenseExplain}}" />
+        </view>
+        <button class="submit" formType="submit">添加</button>
+    </form>
+</view>

@@ -1,0 +1,48 @@
+.headfont{
+    font-size: 20px;
+    margin: 60rpx 30rpx;
+}
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40rpx;
+}
+
+.item-text{
+    margin-left: 50rpx;
+    margin-right: 20rpx;
+}
+.item-inp{
+    border: 1px solid gray;
+    border-radius: 10rpx;
+    width: 380rpx;
+    height: 46rpx;
+}
+.picker-img{
+    width: 40rpx;
+    height: 36rpx;
+}
+
+.item-switch{
+    /* 通过zoom设置大小，原始大小是1，zoom越大，图标就越大 */
+    zoom:0.6;
+    margin-left: 20rpx;
+    /*另一种switch样式设置详见 https://blog.csdn.net/qq_39108466/article/details/79932804. */
+}
+
+.disable{
+    background-color: rgba(206, 206, 206, 0.678);
+    color: rgb(163, 163, 163);
+}
+
+.submit{
+    margin-top: 100rpx;
+    width: 500rpx;
+    height: 100rpx;
+    background-color: skyblue;
+}
+
+
+
+
+

@@ -1,0 +1,28 @@
+/* pages/pay/pay.wxss */
+.headfont{
+    margin: 30rpx 0rpx;
+    font-size: 20px;
+}
+.nav-item{
+    margin: 50rpx 0;
+}
+
+.item-text{
+    width: 190rpx;
+}
+.item-inp{
+    border: 1rpx solid rgb(161, 161, 161);
+    border-radius: 10rpx;
+    width: 400rpx;
+    text-align: center;
+}
+.nav-item textarea{
+    width: 400rpx;
+}
+.addpay{
+    position: absolute;
+    left: 33%;
+    bottom: 30rpx;
+    color: rgb(71, 178, 240);
+    font: 10px;
+}
